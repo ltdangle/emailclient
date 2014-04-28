@@ -125,7 +125,7 @@ define(['jquery', 'mockjax', 'fixtures', 'knockout'], function ($, mockjax, fixt
     function sendEmail(account_id, to, from, body){
         var dfd = Q.defer();
         $.ajax({
-            type: 'get',
+            type: 'post',
             url: SEND_EMAIL_URL,
             data: {account_id: account_id, to: to, from: from, body:body},
             dataType: 'json',
