@@ -1,0 +1,45 @@
+<div>
+    <!-- Single button -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Action
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Find customer</a></li>
+            <li><a href="#">Convert to ticket</a></li>
+            <li><a href="#">Show customer stats</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Close all customer tickets</a></li>
+        </ul>
+    </div>
+
+
+    <div style="float: right; text-align: center">
+
+        <button type="button" class="btn btn-primary" data-bind="click: reply">Reply</button>
+    </div>
+
+    <h4 data-bind="style: { color: email.isFlagged() ? '#a94442' : 'black' }">
+        <span data-bind="click: flagEmail ">
+        <span data-bind="text: email.subject">Re: this is email subject </span>
+        <span class="glyphicon glyphicon-star" style="font-size: 20px;"></span>
+        </span>
+    </h4>
+
+    <h5 data-bind="text: email.from">sender@domain.com</h5>
+    <span data-bind="text: email.date">April 32, 20:00</span>
+
+    <hr style="margin: 5px 0; padding:5px;"/>
+
+    <div style="" data-bind="html: email.body">
+        Question: What is the single most revealing thing about any person?<br/>
+
+        Answer from Vivian Zhang<br/>
+        Pretend their house is on fire. Then observe what they run or look to first. It could be a material possession.
+        Could be their loved ones.<br/>
+
+        When Sherlock did this to Irene Adler, she immediately gave away the position of her most prized possession- her
+        phone with all the contacts that allowed her to maintain control and power.<br/>
+    </div>
+</div>

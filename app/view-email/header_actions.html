@@ -1,0 +1,28 @@
+<!--Account status -->
+<span style="font-size: 17px;">
+
+    <h4 style="display: inline;">
+        <a data-bind="attr: {href:'#account-emails/'+account_id}, text: alias"></a>
+    </h4>
+
+     <span class="badge" style="font-size:inherit; margin: 0px; background-color: #428BCA;"
+           data-bind="text: unreadEmails().length"></span>
+
+     <span class="badge" style="font-size:inherit; margin: 0px;" data-bind="text: emails().length"></span>
+    </span>
+
+
+<!--Load emails button-->
+<span data-bind="click: loadAccountEmails">
+        <span class="glyphicon glyphicon-refresh" data-bind="visible: !isAccountLoading()"></span>
+        <img data-bind="visible: isAccountLoading()" src="img/ajax-loader.gif">
+
+</span>
+
+
+<!--Delete selected emails button-->
+<span>
+    <span class="glyphicon glyphicon-remove-circle"
+          data-bind="click: deleteEmails, visible: !deleteInProgress()"></span>
+    <img data-bind="visible: deleteInProgress()" src="img/ajax-loader.gif">
+</span>

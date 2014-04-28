@@ -1,0 +1,71 @@
+<!-- Single button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-cog"></span>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a data-bind="click: loadAccountEmails">
+                <!--Load emails button-->
+                <span>
+                                <span class="glyphicon glyphicon-refresh" data-bind="visible: !isAccountLoading()"></span>
+                Load account emails
+                </span>
+            </a>
+        </li>
+
+        <li class="divider"></li>
+
+        <li>
+            <a data-bind="click: deleteEmails">
+                <!--Delete selected emails button-->
+                <span>
+                    <span class="glyphicon glyphicon-remove-circle"
+                          data-bind="visible: !deleteInProgress()"></span>
+                    <img data-bind="visible: deleteInProgress()" src="img/ajax-loader.gif">
+                </span>
+                Delete selected emails
+
+            </a>
+        </li>
+
+        <li class="divider"></li>
+
+        <li>
+            <a data-bind="click: composeEmail">
+                <!--Compose new email-->
+                <span>
+                    <span class="glyphicon glyphicon-comment"></span>
+                </span>
+                Compose email
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--Account status -->
+<span style="font-size: 17px;">
+
+    <h4 style="display: inline;">
+        <a data-bind="attr: {href:'#account-emails/'+account_id}, text: account_id"></a>
+    </h4>
+     <span class="badge" style="font-size:inherit; margin: 0px; background-color: #a94442;" data-bind="text: flaggedEmails().length"></span>
+
+     <span class="badge" style="font-size:inherit; margin: 0px; background-color: #428BCA;"
+           data-bind="text: unreadEmails().length"></span>
+
+     <span class="badge" style="font-size:inherit; margin: 0px;" data-bind="text: emails().length"></span>
+    <img data-bind="visible: isAccountLoading()" src="img/ajax-loader.gif">
+    </span>
+
+
+
+
+
+
+
+
+
+
+

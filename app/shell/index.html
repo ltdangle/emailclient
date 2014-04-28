@@ -1,0 +1,18 @@
+﻿﻿<!-- Fixed top navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header" style="font-size: 25px; padding: 5px; color:#777777">
+            <span class="glyphicon glyphicon-home" data-bind="click: router.goHome"></span>
+            <span id="header-actions"></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" data-bind="router: { }" style="padding-top: 65px;"></div>
+
+<div style="display: none;" data-bind="text: router.header()"></div>
+
+<div id="spinner" data-bind="visible: router.isNavigating()">Loading...</div>
+
+

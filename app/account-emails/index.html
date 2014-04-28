@@ -1,0 +1,41 @@
+﻿<table class="table table-condensed">
+    <tbody>
+    <!-- ko foreach: emails() -->
+    <tr style="border-bottom: 1px dashed lightgrey; margin-bottom: 2px;"
+        data-bind="css: { 'bg-warning': isSelected()}">
+
+        <td>
+            <input type="checkbox" style="width: 20px; height: 20px;" data-bind="checked: isSelected">
+        </td>
+
+        <td>
+
+
+        <span style="display: table-cell; vertical-align: middle;"
+              data-bind="click: $root.viewEmail, style: { color: isFlagged() ? '#a94442' : 'black' } ">
+
+                <span data-bind="text: subject, style: { fontWeight: isRead() ? 'normal' : 'bold'}"
+                      style="font-size:16px; display: inline-block; overflow: hidden;  height: 1.4em;"></span><br/>
+                <span  style="display: inline-block; overflow: hidden;  height: 1.4em;" data-bind="text: from"></span><br/>
+
+                <span style="display: inline-block; overflow: hidden; height: 3em;" data-bind="html: body"></span>
+
+        </span>
+
+
+
+
+
+        </td>
+
+        <td>
+            <span style="color:blue;" data-bind="text: date"></span>
+            <span class="glyphicon glyphicon-star"
+                  style="display: inline-block; margin-top: 10px; font-size: 30px;"
+                  data-bind="click: $root.flagEmail, style: { color: isFlagged() ? '#a94442' : 'black' }"></span>
+        </td>
+    </tr>
+
+    <!-- /ko -->
+    </tbody>
+</table>

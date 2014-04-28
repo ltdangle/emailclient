@@ -1,0 +1,16 @@
+<div class="well" style="vertical-align: middle;">
+    <h4 style="display: inline;">
+        <a href="" data-bind="attr: { href: '#account-emails/'+id}">
+            <span data-bind="text: alias"></span>
+        </a>
+
+        <span class="badge" style="font-size:inherit; background-color: #a94442;" data-bind="text: flaggedEmails().length"></span>
+
+        <span class="badge" style="font-size:inherit; background-color: #428BCA;" data-bind="text: unreadEmails().length"></span>
+
+        <span class="badge" style="font-size: inherit;" data-bind="visible: emails().length > 0, text: emails().length"></span>
+
+        <img data-bind="visible: isLoading()" src="img/ajax-loader.gif">
+        <span class="glyphicon glyphicon-refresh" data-bind="click: loadAccount, visible: !isLoading()"></span>
+    </h4>
+</div>
